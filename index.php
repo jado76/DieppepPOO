@@ -9,6 +9,7 @@ $toto = new Querie();
     Debug::dump($result);
     }
 
+
     else {
     echo "erreur";
     }
