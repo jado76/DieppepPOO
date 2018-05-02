@@ -18,7 +18,7 @@ class Form
 
     foreach($conf as $c) {
         $form .= "<div>";
-        if (isset($c['name'])) {
+        if (isset($c['name']) && $c['type'] != "hidden") {
             $form .= "<label for='" . $c['name'] . "'>";
             $form .= ucfirst($c['name']);
             $form .= "&nbsp;: ";
@@ -33,11 +33,15 @@ class Form
         $form .= isset($c['name']) ? "name='" . $c['name'] . "'" : "";
         $form .= " />";
         $form .= "</div>";
+
     }
     $form .= "</form>";
     return $form;
 }
     public function frmCheck()
     {
+        $conf = parse_ini_file($this->path . $this->file . ".ini", true);
+
+
     }
 }
